@@ -18,9 +18,22 @@ app.post('/user', (req, res) => {
 })
 app.get('/user/:id', (req, res) => {
 
-    var index = req.params.id
+
     res.json(usrarr[req.params.id])
 
+})
+
+app.delete('/user/:id', (req, res) => {
+    if (usrarr[req.params.id] !== undefined) {
+        res.status(202)
+        res.json(usrarr[req.params.id])
+        usrarr.splice(0, 1)
+    }
+    else {
+        res.status(204)
+        res.json(usrarr)
+
+    }
 })
 app.listen(3000, () => {
     console.log('server running');
