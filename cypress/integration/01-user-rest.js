@@ -44,7 +44,7 @@ describe('User RESTful', () => {
         }
       });
 
-      request.its('body').should('deep.eq', [ { id: 0 } ]);
+      request.its('body').should('deep.eq', [{ id: 0 }]);
 
     });
 
